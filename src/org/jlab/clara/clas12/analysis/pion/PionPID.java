@@ -45,10 +45,11 @@ public class PionPID extends ClasServiceEngine {
                         float py = ebank.getFloat("py", iph1);
                         float pz = ebank.getFloat("pz", iph1);
                         LorentzVector pi0 = new LorentzVector();
-                        pi0.setPxPyPzM(px, py, pz, 0);
 
                         for (int iph2 = iph1 + 1; iph2 < ebank.rows(); iph2++) {
                             if (ebank.getByte("charge", iph2) == 0) {
+                        		  pi0.setPxPyPzM(px, py, pz, 0);
+
                                 px = ebank.getFloat("px", iph2);
                                 py = ebank.getFloat("py", iph2);
                                 pz = ebank.getFloat("pz", iph2);
